@@ -28,7 +28,7 @@ def user_input_features():
     Maximum_Operating_Pressure = st.sidebar.slider('Maximum Operating Pressure, Pop, Max (MPa)', min_value=0, max_value=50, step=1)
     Minimum_Operating_Pressure = st.sidebar.slider('Minimum Operating Pressure, Pop, Min (MPa)', min_value=0, max_value=50, step=1)
 
-    data = {'t (mm)': pipe_thickness,
+    data = {'UTS (MPa)': UTS,
             'D (mm)': pipe_diameter,
             'L (mm)': pipe_length,
             'Lc (mm)': corrosion_length,
@@ -42,7 +42,7 @@ def user_input_features():
 
 df = user_input_features()
 
-t=df['t (mm)'].values.item()
+UTS=df['UTS (MPa)'].values.item()
 D=df['D (mm)'].values.item()
 L=df['L (mm)'].values.item()
 Lc=df['Lc (mm)'].values.item()
