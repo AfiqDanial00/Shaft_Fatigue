@@ -18,7 +18,7 @@ st.image(htp, caption= "Fig. 1: Schematic illustration of the geometry of a typi
 st.sidebar.header('User Input Parameters')
 
 def user_input_features():
-    pipe_thickness = st.sidebar.number_input('Pipe Thickness, t (mm)', value = 0.01)
+    UTS = st.sidebar.number_input('UTS , UTS (MPa)', value = 0.01)
     pipe_diameter = st.sidebar.number_input('Pipe Diameter, D (mm)', value = 0.01)
     pipe_length = st.sidebar.number_input('Pipe Length, L (mm)', value = 0.01)
     corrosion_length = st.sidebar.number_input('Corrosion Length, Lc (mm)', value = 0.01)
