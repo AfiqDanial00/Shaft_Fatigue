@@ -18,36 +18,37 @@ st.image(htp, caption= "Fig. 1: Schematic illustration of the geometry of a typi
 st.sidebar.header('User Input Parameters')
 
 def user_input_features():
-    shaft_thickness = st.sidebar.number_input('Shaft Thickness, t (mm)', value = 0.01)
-    shaft_diameter = st.sidebar.number_input('Shaft Diameter, D (mm)', value = 0.01)
+    shaft_diameter_A = st.sidebar.number_input('Shaft Diameter(A), D (mm)', value = 0.01)
+    shaft_diameter_B = st.sidebar.number_input('Shaft Diameter(B), D (mm)', value = 0.01)
     shaft_length = st.sidebar.number_input('Shaft Length, L (mm)', value = 0.01)
+    Applied_Force = st.sidebar.number_input('Applied Force, F (N)', value = 0.01)
     Sy = st.sidebar.number_input('Yield Stress, Sy (MPa)', value = 0.01)
     UTS = st.sidebar.number_input('Ultimate Tensile Strength, UTS (MPa)', value = 0.01)
-    Maximum_Operating_Pressure = st.sidebar.slider('Maximum Operating Pressure, Pop, Max (MPa)', min_value=0, max_value=50, step=1)
-    Minimum_Operating_Pressure = st.sidebar.slider('Minimum Operating Pressure, Pop, Min (MPa)', min_value=0, max_value=50, step=1)
+    Length_of_F_to_shaft_end = st.sidebar.number_input(Length of F to shaft end, Lf (mm)', value = 0.01)
 
-    data = {'D (mm)': shaft_diameter,
-            't (mm)': shaft_thickness,
-            'L (mm)': shaft_length,          
+    data = {'Da (mm)': shaft_diameter_A,
+            'Db (mm)': shaft_diameter_B,
+            'L (mm)': shaft_length,   
+            'F (N)': Applied_Force,
+            'Lf (mm)': Length_of_F_to_shaft_end
             'UTS (MPa)': UTS,
             'Sy (MPa)': Sy,
-            'Pop_Max (MPa)': Maximum_Operating_Pressure,
-            'Pop_Min (MPa)': Minimum_Operating_Pressure}
+           
     features = pd.DataFrame(data, index=[0])
     return features
 
 df = user_input_features()
 
-D=df['D (mm)'].values.item()
-t=df['t (mm)'].values.item()
+Da=df['Da (mm)'].values.item()
+Db=df['Db (mm)'].values.item()
 L=df['L (mm)'].values.item()
+F=df['F (N)'].values.item()
 UTS=df['UTS (MPa)'].values.item()
 Sy=df['Sy (MPa)'].values.item()
-Pop_Max=df['Pop_Max (MPa)'].values.item()
-Pop_Min=df['Pop_Min (MPa)'].values.item()
+
 
 st.subheader('Nomenclature')
-st.write('t is the shaft thickness; D is the shaft diameter; L is the shaft length (i.e., by default = 1000 mm); Lc is the corrosion length; Sy is the pipe material yield stress; UTS is the pipe material Ultimate Tensile Strength.')
+st.write(' Da is the shaft diameter A;Db is the shaft diameter B; L is the shaft length (i.e., by default = 1000 mm); F is the applied force on the shaft; Sy is the shaft material yield stress; UTS is the shaft material Ultimate Tensile Strength.')
 
 # Calculate burst pressure of intact pipe P Von Mises
 Pvm = 4*t*UTS/(m.sqrt(3)*D)
@@ -74,7 +75,7 @@ P_PCORRC = (2*t*UTS/D)*(1-Dc/t)
 user_input={'t (mm)': "{:.2f}".format(t),
             'D (mm)': "{:.2f}".format(D),
             'L (mm)': "{:.2f}".format(L),
-            'Lc (mm)': "{:.2f}".format(Lc),
+            'Lf (mm)': "{:.2f}".format(Lf),
             'Dc (mm)': "{:.2f}".format(Dc),
             'UTS (MPa)': "{:.2f}".format(UTS),
             'Sy (MPa)': "{:.2f}".format(Sy),
