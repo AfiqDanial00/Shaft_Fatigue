@@ -24,7 +24,7 @@ def user_input_features():
     Applied_Force = st.sidebar.number_input('Applied Force, F (N)', value = 0.01)
     Sy = st.sidebar.number_input('Yield Stress, Sy (MPa)', value = 0.01)
     UTS = st.sidebar.number_input('Ultimate Tensile Strength, UTS (MPa)', value = 0.01)
-    Length_of_F_to_shaft_end = st.sidebar.number_input(Length of F to shaft end, Lf (mm)', value = 0.01)
+    Length_of_F_to_shaft_end = st.sidebar.number_input(Length of F to shaft end, Lf (mm), value = 0.01)
 
     data = {'Da (mm)': shaft_diameter_A,
             'Db (mm)': shaft_diameter_B,
