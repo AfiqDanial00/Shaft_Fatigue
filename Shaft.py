@@ -45,6 +45,7 @@ L=df['L (mm)'].values.item()
 F=df['F (N)'].values.item()
 UTS=df['UTS (MPa)'].values.item()
 Sy=df['Sy (MPa)'].values.item()
+Lf=df['Lf (mm)'].values.item()
 
 
 st.subheader('Nomenclature')
