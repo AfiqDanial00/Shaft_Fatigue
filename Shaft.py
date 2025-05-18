@@ -25,6 +25,9 @@ def user_input_features():
     Sy = st.sidebar.number_input('Yield Stress, Sy (MPa)', value = 0.01)
     UTS = st.sidebar.number_input('Ultimate Tensile Strength, UTS (MPa)', value = 0.01)
     Length_of_F_to_shaft_end = st.sidebar.number_input('Length of F to shaft end, Lf (mm)', value = 0.01)
+    Constant_a_for_ka = st.sidebar.number_input('Constant a for ka, a', value = 0.00)
+    Constant_b_for_ka = st.sidebar.number_input('Constant b for ka, b', value = 0.00)
+    Notch_radius = st.sidebar.number_input('Notch radius,r(mm)', value = 0.01)
 
     data = {'Da (mm)': shaft_diameter_A,
             'Db (mm)': shaft_diameter_B,
@@ -32,7 +35,13 @@ def user_input_features():
             'F (N)': Applied_Force,
             'Lf (mm)': Length_of_F_to_shaft_end,
             'UTS (MPa)': Ultimate_Tensile_Strength,
-            'Sy (MPa)': Sy,}
+            'Sy (MPa)': Sy,
+            'a': Constant_a_for_ka,
+            'b': Constant_b_for_ka,
+            'r(mm)': Notch_radius,}
+            
+            
+     
            
     features = pd.DataFrame(data, index=[0])
     return features
@@ -46,6 +55,8 @@ F=df['F (N)'].values.item()
 UTS=df['UTS (MPa)'].values.item()
 Sy=df['Sy (MPa)'].values.item()
 Lf=df['Lf (mm)'].values.item()
+a=df['a'].values.item()
+b=df['b'].values.item()
 
 
 st.subheader('Nomenclature')
