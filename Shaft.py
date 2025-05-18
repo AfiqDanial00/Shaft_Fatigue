@@ -31,7 +31,7 @@ def user_input_features():
 
     data = {'Da (mm)': shaft_diameter_A,
             'Db (mm)': shaft_diameter_B,
-            'L (mm)': shaft_length,   
+            'L(mm)': shaft_length,   
             'F (N)': Applied_Force,
             'Lf (mm)': Length_of_F_to_shaft_end,
             'UTS (MPa)': Ultimate_Tensile_Strength,
