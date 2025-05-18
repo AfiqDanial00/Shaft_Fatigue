@@ -31,7 +31,7 @@ def user_input_features():
             'L (mm)': shaft_length,   
             'F (N)': Applied_Force,
             'Lf (mm)': Length_of_F_to_shaft_end
-            'UTS (MPa)': UTS,
+            'UTS (MPa)': Ultimate Tensile Strength,
             'Sy (MPa)': Sy,}
            
     features = pd.DataFrame(data, index=[0])
