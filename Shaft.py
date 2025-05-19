@@ -78,8 +78,7 @@ user_input_df=pd.DataFrame(user_input, index=[0])
 st.subheader('User Input Parameters')
 st.write(user_input_df)
 
-# Calculate Se'
-Se' (MPa) = 0.5*UTS
+
 
 # Calculate Se'
 calculated_param={'Se' (MPa)': "{:.2f}".format(Se')}
@@ -124,24 +123,6 @@ P1min = Pop_Min*D/(2*t)
 P2min = Pop_Min*D/(4*t)
 P3min = 0
 
-# VM stress Max and Min Operating Pressure
-Sigma_VM_Pipe_Max_Operating_Pressure = (1/m.sqrt(2))*((P1max-P2max)**2+(P2max-P3max)**2+(P3max-P1max)**2)**0.5
-
-Sigma_VM_Pipe_Min_Operating_Pressure = 1/m.sqrt(2)*m.sqrt((P1min-P2min)**2+(P2min-P3min)**2+(P3min-P1min)**2)
-
-calculated_param={'Sigma_VM_Pipe_Max_Operating_Pressure (MPa)': "{:.2f}".format(Sigma_VM_Pipe_Max_Operating_Pressure)}
-calculated_param_df=pd.DataFrame(calculated_param, index=[0])
-st.subheader('Von Mises stress of Maximum Operating Pressure')
-st.write(calculated_param_df)
-
-calculated_param={'Sigma_VM_Pipe_Min_Operating_Pressure (MPa)': "{:.2f}".format(Sigma_VM_Pipe_Min_Operating_Pressure)}
-calculated_param_df=pd.DataFrame(calculated_param, index=[0])
-st.subheader('Von Mises stress of Minimum Operating Pressure')
-st.write(calculated_param_df)
-
-Stresses = [Sigma_VM_Pipe_Max_Operating_Pressure, Sigma_VM_Pipe_Min_Operating_Pressure, Sy, UTS]
-index = ["Svm_Max (MPa)", "Svm_Min (MPa)", "Yield Stress (MPa)", "UTS (MPa)"]
-df = pd.DataFrame({"Stresses (MPa)": Stresses}, index=index)
 
 
 
