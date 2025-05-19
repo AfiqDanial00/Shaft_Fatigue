@@ -61,7 +61,7 @@ st.subheader('Nomenclature')
 st.write(' Da is the shaft diameter A; Db is the shaft diameter B; L is the shaft length (i.e., by default = 1000 mm); F is the applied force on the shaft; Sy is the shaft material yield stress; UTS is the shaft material Ultimate Tensile Strength.')
 
 # Calculate Se'
-Se prime (Mpa)= 0.5*UTS
+Se_prime (Mpa)= 0.5*UTS
 
 user_input={'Da (mm)': "{:.2f}".format(Da),
             'Db (mm)': "{:.2f}".format(Db),
@@ -81,7 +81,7 @@ st.write(user_input_df)
 
 
 # Calculate Se'
-calculated_param={'Se prime (MPa)': "{:.2f}".format(Se prime)}
+calculated_param={'Se_prime (MPa)': "{:.2f}".format(Se_prime)}
 calculated_param_df=pd.DataFrame(calculated_param, index=[0])
 st.subheader('Calculated Se prime')
 st.write(calculated_param_df)
