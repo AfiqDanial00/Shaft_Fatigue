@@ -72,7 +72,7 @@ user_input={'Da (mm)': "{:.2f}".format(Da),
             'Sy (MPa)': "{:.2f}".format(Sy),
             'a': "{:.2f}".format(a),
             'b': "{:.2f}".format(b),
-            'r (mm)': "{:.2f}".format(r)}
+            'r(mm)': "{:.2f}".format(r)}
             
 user_input_df=pd.DataFrame(user_input, index=[0])
 st.subheader('User Input Parameters')
