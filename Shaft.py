@@ -38,10 +38,7 @@ def user_input_features():
             'Sy (MPa)': Sy,
             'a': Constant_a_for_ka,
             'b': Constant_b_for_ka,
-            'r(mm)': Notch_radius,}
-            
-            
-     
+            'r(mm)': Notch_radius,}      
            
     features = pd.DataFrame(data, index=[0])
     return features
@@ -57,50 +54,37 @@ Sy=df['Sy (MPa)'].values.item()
 Lf=df['Lf (mm)'].values.item()
 a=df['a'].values.item()
 b=df['b'].values.item()
+r=df['r'].values.item()
 
 
 st.subheader('Nomenclature')
-st.write(' Da is the shaft diameter A;Db is the shaft diameter B; L is the shaft length (i.e., by default = 1000 mm); F is the applied force on the shaft; Sy is the shaft material yield stress; UTS is the shaft material Ultimate Tensile Strength.')
+st.write(' Da is the shaft diameter A; Db is the shaft diameter B; L is the shaft length (i.e., by default = 1000 mm); F is the applied force on the shaft; Sy is the shaft material yield stress; UTS is the shaft material Ultimate Tensile Strength.')
 
-# Calculate burst pressure of intact pipe P Von Mises
-Pvm = 4*t*UTS/(m.sqrt(3)*D)
+# Calculate Se'
+Se'= 0.5*UTS
 
-# Calculate burst pressure of intact pipe P Tresca
-PTresca = 2*t*UTS/(D)
-
-# Calculate burst pressure of corroded pipe P ASME B31G (2013)
-M = m.sqrt(1+0.8*(L/(m.sqrt(D*t)))) #Folias factor
-
-if L < m.sqrt(20*D*t):
-    P_ASME_B31G = (2*t*UTS/D)*(1-(2/3)*(Dc/t)/1-(2/3)*(Dc/t)/M)
-
-elif L > m.sqrt(20*D*t):
-    P_ASME_B31G = (2*t*UTS/D)*(1-(Dc/t))
-
-# Calculate burst pressure of corroded pipe PDnV
-Q = m.sqrt(1+0.31*(Lc)**2/D*t) #Q is the curved fit of FEA results
-P_DnV = (2*UTS*t/D-t)*((1-(Dc/t))/(1-(Dc/(t*Q))))
-
-# Calculate burst pressure of corroded pipe P PCORRC Model 
-P_PCORRC = (2*t*UTS/D)*(1-Dc/t)
-
-user_input={'t (mm)': "{:.2f}".format(t),
-            'D (mm)': "{:.2f}".format(D),
+user_input={'Da (mm)': "{:.2f}".format(Da),
+            'Db (mm)': "{:.2f}".format(Db),
             'L (mm)': "{:.2f}".format(L),
             'Lf (mm)': "{:.2f}".format(Lf),
-            'Dc (mm)': "{:.2f}".format(Dc),
+            'F (N)': "{:.2f}".format(F),
             'UTS (MPa)': "{:.2f}".format(UTS),
             'Sy (MPa)': "{:.2f}".format(Sy),
-            'Pop_Max (MPa)': "{:.2f}".format(Pop_Max),
-            'Pop_Min (MPa)': "{:.2f}".format(Pop_Min)}
+            'a': "{:.2f}".format(a),
+            'b': "{:.2f}".format(b),
+            'r': "{:.2f}".format(r)
+            
 user_input_df=pd.DataFrame(user_input, index=[0])
 st.subheader('User Input Parameters')
 st.write(user_input_df)
 
-# Intact Pipe
-calculated_param={'Pvm (MPa)': "{:.2f}".format(Pvm)}
+# Calculate Se'
+Se' (MPa) = 0.5*UTS
+
+# Calculate Se'
+calculated_param={'Se' (MPa)': "{:.2f}".format(Se')}
 calculated_param_df=pd.DataFrame(calculated_param, index=[0])
-st.subheader('Calculated Intact Pipe Burst Pressure via Von Mises')
+st.subheader('Calculated Se'')
 st.write(calculated_param_df)
 
 calculated_param={'PTresca (MPa)': "{:.2f}".format(PTresca)}
