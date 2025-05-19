@@ -64,7 +64,7 @@ st.write(' Da is the shaft diameter A; Db is the shaft diameter B; L is the shaf
 Se_prime = 0.5*UTS
 
 # Calculate ka
-ka = a*(UTS ** b)
+ka = a*(UTS**b)
 
 user_input={'Da (mm)': "{:.2f}".format(Da),
             'Db (mm)': "{:.2f}".format(Db),
@@ -89,7 +89,7 @@ calculated_param_df=pd.DataFrame(calculated_param, index=[0])
 st.subheader('Calculated Se prime')
 st.write(calculated_param_df)
 #Calculate ka
-calculated_param={'ka': "{:.2f}".format}
+calculated_param={'ka': "{:.2f}".format(ka)}
 calculated_param_df=pd.DataFrame(calculated_param, index=[0])
 st.subheader('Calculated ka')
 st.write(calculated_param_df)
