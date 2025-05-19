@@ -63,6 +63,9 @@ st.write(' Da is the shaft diameter A; Db is the shaft diameter B; L is the shaf
 # Calculate Se'
 Se_prime = 0.5*UTS
 
+# Calculate ka
+ka = a*(UTS ** b)
+
 user_input={'Da (mm)': "{:.2f}".format(Da),
             'Db (mm)': "{:.2f}".format(Db),
             'L (mm)': "{:.2f}".format(L),
@@ -85,10 +88,10 @@ calculated_param={'Se_prime (MPa)': "{:.2f}".format(Se_prime)}
 calculated_param_df=pd.DataFrame(calculated_param, index=[0])
 st.subheader('Calculated Se prime')
 st.write(calculated_param_df)
-
-calculated_param={'PTresca (MPa)': "{:.2f}".format(PTresca)}
+#Calculate ka
+calculated_param={'ka': "{:.2f}".format}
 calculated_param_df=pd.DataFrame(calculated_param, index=[0])
-st.subheader('Calculated Intact Pipe Burst Pressure via Tresca')
+st.subheader('Calculated ka')
 st.write(calculated_param_df)
 
 # Corroded Pipe
