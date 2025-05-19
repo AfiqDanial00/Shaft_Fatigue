@@ -34,7 +34,7 @@ def user_input_features():
             'L(mm)': shaft_length,   
             'F (N)': Applied_Force,
             'Lf (mm)': Length_of_F_to_shaft_end,
-            'UTS (MPa)': Ultimate_Tensile_Strength,
+            'UTS (MPa)': UTS,
             'Sy (MPa)': Sy,
             'a': Constant_a_for_ka,
             'b': Constant_b_for_ka,
