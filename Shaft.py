@@ -81,7 +81,7 @@ st.write(user_input_df)
 
 
 # Calculate Se'
-calculated_param={'Se prime (MPa)': "{:.2f}".format(Se')}
+calculated_param={'Se prime (MPa)': "{:.2f}".format(Se prime)}
 calculated_param_df=pd.DataFrame(calculated_param, index=[0])
 st.subheader('Calculated Se prime')
 st.write(calculated_param_df)
