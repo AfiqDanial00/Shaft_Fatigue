@@ -54,7 +54,7 @@ Sy=df['Sy (MPa)'].values.item()
 Lf=df['Lf (mm)'].values.item()
 a=df['a'].values.item()
 b=df['b'].values.item()
-r=df['r'].values.item()
+r=df['r(mm)'].values.item()
 
 
 st.subheader('Nomenclature')
