@@ -61,7 +61,7 @@ st.subheader('Nomenclature')
 st.write(' Da is the shaft diameter A; Db is the shaft diameter B; L is the shaft length (i.e., by default = 1000 mm); F is the applied force on the shaft; Sy is the shaft material yield stress; UTS is the shaft material Ultimate Tensile Strength.')
 
 # Calculate Se'
-Se_prime (Mpa) = 0.5*UTS
+Se_prime (MPa) = 0.5*UTS
 
 user_input={'Da (mm)': "{:.2f}".format(Da),
             'Db (mm)': "{:.2f}".format(Db),
