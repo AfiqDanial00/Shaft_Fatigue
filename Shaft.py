@@ -64,7 +64,7 @@ st.write(' Da is the shaft diameter A; Db is the shaft diameter B; L is the shaf
 Se_prime = 0.5*UTS
 
 # Calculate ka
-ka = a*(UTS ** b)
+ka = a*(UTS**b)
 
 user_input={'Da (mm)': "{:.2f}".format(Da),
             'Db (mm)': "{:.2f}".format(Db),
