@@ -66,6 +66,12 @@ Se_prime = 0.5*UTS
 # Calculate ka
 ka = a*(UTS**b)
 
+# Calculate kb
+if 7.62 <= Da <= 51
+     kb = 1.24*(Da ** -0.107)
+elif
+    
+
 user_input={'Da (mm)': "{:.2f}".format(Da),
             'Db (mm)': "{:.2f}".format(Db),
             'L (mm)': "{:.2f}".format(L),
@@ -88,11 +94,15 @@ calculated_param={'Se_prime (MPa)': "{:.2f}".format(Se_prime)}
 calculated_param_df=pd.DataFrame(calculated_param, index=[0])
 st.subheader('Calculated Se prime')
 st.write(calculated_param_df)
+
 #Calculate ka
 calculated_param={'ka': "{:.2f}".format(ka)}
 calculated_param_df=pd.DataFrame(calculated_param, index=[0])
 st.subheader('Calculated ka')
 st.write(calculated_param_df)
+
+#Calculate kb
+calculated_param={
 
 # Corroded Pipe
 calculated_param={'P_ASME_B31G (MPa)': "{:.2f}".format(P_ASME_B31G)}
