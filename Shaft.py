@@ -12,10 +12,12 @@ from glob import glob
 st.header("Advanced Shaft Fatigue Evaluation Shafi")
 
 st.subheader('Dimensional Parameters')
-htp="https//drive.google.com/file/d/1EIudjhDOg1bqfd2SheuL_f6zd4CuS_Eh/view?usp=sharing"(htp, caption= "Fig. 1: Schematic Drawing of Shaft with Dimensions")
+
+# Corrected URL (direct link format for Google Drive)
+image_url = "https://drive.google.com/uc?id=1EIudjhDOg1bqfd2SheuL_f6zd4CuS_Eh"
+st.image(image_url, caption="Fig. 1: Schematic Drawing of Shaft with Dimensions")
 
 st.sidebar.header('User Input Parameters')
-
 def user_input_features():
     shaft_diameter_A = st.sidebar.number_input('Shaft Diameter(A), D (mm)', value = 30)
     shaft_diameter_B = st.sidebar.number_input('Shaft Diameter(B), D (mm)', value = 0.01)
