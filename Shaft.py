@@ -12,7 +12,7 @@ from glob import glob
 st.header("Advanced Shaft Fatigue Evaluation Shafi")
 
 st.subheader('Dimensional Parameters')
-htp="https://drive.google.com/file/d/1EIudjhDOg1bqfd2SheuL_f6zd4CuS_Eh/view?usp=sharing"(htp, caption= "Fig. 1: Schematic Drawing of Shaft with Dimensions")
+htp="drive.google.com/file/d/1EIudjhDOg1bqfd2SheuL_f6zd4CuS_Eh/view?usp=sharing"(htp, caption= "Fig. 1: Schematic Drawing of Shaft with Dimensions")
 
 st.sidebar.header('User Input Parameters')
 
