@@ -67,10 +67,14 @@ Se_prime = 0.5*UTS
 ka = a*(UTS**b)
 
 # Calculate kb
-{if 7.62 <= Da <= 51;
-     kb = 1.24*(Da ** -0.107)
-elif 51 <= Da <= 254
-     kb = 1.51*(Da ** -0.157)}
+    if 7.62 <= Da <= 51:
+        kb = 1.24 * (Da ** -0.107)
+    elif 51 < Da <= 254:
+        kb = 1.51 * (Da ** -0.157)
+    else:
+        kb = None  # You can customize this for out-of-range values
+    return kb
+
     
 
 user_input={'Da (mm)': "{:.2f}".format(Da),
