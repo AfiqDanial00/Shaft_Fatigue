@@ -67,7 +67,7 @@ Se_prime = 0.5*UTS
 ka = a*(UTS**b)
 
 # Calculate kb
-def kb:
+def (kb):
     if 7.62 <= Da <= 51:
         kb = 1.24 * (Da ** -0.107)
     elif 51 < Da <= 254:
