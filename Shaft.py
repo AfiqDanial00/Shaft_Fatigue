@@ -18,7 +18,7 @@ st.image(htp, caption= "Fig. 1: Schematic illustration of the geometry of a typi
 st.sidebar.header('User Input Parameters')
 
 def user_input_features():
-    shaft_diameter_A = st.sidebar.number_input('Shaft Diameter(A), D (mm)', value = 0.01)
+    shaft_diameter_A = st.sidebar.number_input('Shaft Diameter(A), D (mm)', value = 30)
     shaft_diameter_B = st.sidebar.number_input('Shaft Diameter(B), D (mm)', value = 0.01)
     shaft_length = st.sidebar.number_input('Shaft Length, L (mm)', value = 0.01)
     Applied_Force = st.sidebar.number_input('Applied Force, F (N)', value = 0.01)
