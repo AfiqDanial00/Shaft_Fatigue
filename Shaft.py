@@ -69,7 +69,8 @@ ka = a*(UTS**b)
 # Calculate kb
 if 7.62 <= Da <= 51
      kb = 1.24*(Da ** -0.107)
-elif
+elif 51 <= Da <= 254
+     kb = 1.51*(Da ** -0.157)
     
 
 user_input={'Da (mm)': "{:.2f}".format(Da),
@@ -102,7 +103,10 @@ st.subheader('Calculated ka')
 st.write(calculated_param_df)
 
 #Calculate kb
-calculated_param={
+calculated_param={'kb': "{:.2f}".format(kb)}
+calculated_param_df=pd.DataFrame(calculated_param, index=[0])
+st.subheader('Calculated kb')
+st.write(calculated_param_df)
 
 # Corroded Pipe
 calculated_param={'P_ASME_B31G (MPa)': "{:.2f}".format(P_ASME_B31G)}
