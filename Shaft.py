@@ -12,8 +12,7 @@ from glob import glob
 st.header("Advanced Shaft Fatigue Evaluation Shafi")
 
 st.subheader('Dimensional Parameters')
-htp="https://www.researchgate.net/profile/Changqing-Gong/publication/313456917/figure/fig1/AS:573308992266241@1513698923813/Schematic-illustration-of-the-geometry-of-a-typical-corrosion-defect.png"
-st.image(htp, caption= "Fig. 1: Schematic illustration of the geometry of a typical corrosion defect.")
+htp="https://drive.google.com/file/d/1EIudjhDOg1bqfd2SheuL_f6zd4CuS_Eh/view?usp=sharing"(htp, caption= "Fig. 1: Schematic Drawing of Shaft with Dimensions")
 
 st.sidebar.header('User Input Parameters')
 
