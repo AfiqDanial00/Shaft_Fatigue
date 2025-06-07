@@ -108,13 +108,9 @@ st.subheader('Calculated ka')
 st.write(calculated_param_df)
 
 #Calculate kb
-# Calculate kb
-kb_value = (Da)  # Call the function using Da
-if kb_value is not None:
-    calculated_param = {'kb': "{:.2f}".format(kb_value)}
-else:
-    calculated_param = {'kb': "Invalid Da"}
-st.subheader('Calculated kb')
+calculated_param={'kb': "{:.2f}".format(kb)}
+calculated_param_df=pd.DataFrame(calculated_param, index=[0])
+st.subheader('Calculated ka')
 st.write(calculated_param_df)
 
 # Corroded Pipe
