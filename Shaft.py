@@ -107,7 +107,7 @@ st.subheader('Calculated ka')
 st.write(calculated_param_df)
 
 #Calculate kb
-calculated_param={'kb': "{:.2f}".format(kb)}
+calculated_param={'kb':"{:.2f}".format(kb(Da))}
 calculated_param_df=pd.DataFrame(calculated_param, index=[0])
 st.subheader('Calculated kb')
 st.write(calculated_param_df)
