@@ -14,7 +14,7 @@ st.header("Advanced Shaft Fatigue Evaluation Shafi")
 st.subheader('Dimensional Parameters')
 
 # Corrected URL (direct link format for Google Drive)
-image_url = "https://drive.google.com/uc?id=1EIudjhDOg1bqfd2SheuL_f6zd4CuS_Eh"
+image_url = "https://media.cheggcdn.com/media/8fe/8fe633e2-8f67-45b7-8628-0d371b179806/hw6problem.png"
 st.image(image_url, caption="Fig. 1: Schematic Drawing of Shaft with Dimensions")
 
 st.sidebar.header('User Input Parameters')
