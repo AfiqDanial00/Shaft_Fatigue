@@ -79,7 +79,7 @@ kb = calculate_kb(Da)
 
 #Calculate Se
 
-Se = Ka*UTS*Kb
+Se = ka*UTS*kb
     
 
 user_input={'Da (mm)': "{:.2f}".format(Da),
