@@ -109,7 +109,7 @@ st.write(calculated_param_df)
 
 #Calculate kb
 # Calculate kb
-kb_value = kb(Da)  # Call the function using Da
+kb_value = (Da)  # Call the function using Da
 if kb_value is not None:
     calculated_param = {'kb': "{:.2f}".format(kb_value)}
 else:
