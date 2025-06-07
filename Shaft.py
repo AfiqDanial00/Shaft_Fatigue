@@ -72,8 +72,6 @@ def kb(Da):
         kb = 1.24 * (Da ** -0.107)
     elif 51 < Da <= 254:
         kb = 1.51 * (Da ** -0.157)
-    else:
-        kb = None  # You can customize this for out-of-range values
     return kb
 
    
