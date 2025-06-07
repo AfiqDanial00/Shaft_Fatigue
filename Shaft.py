@@ -67,12 +67,13 @@ Se_prime = 0.5*UTS
 ka = a*(UTS**b)
 
 # Calculate kb
-def kb(Da):
+def calculate_kb(Da):
     if 7.62 <= Da <= 51:
-        kb = 1.24 * (Da ** -0.107)
+        return 1.24 * (Da ** -0.107)
     elif 51 < Da <= 254:
-        kb = 1.51 * (Da ** -0.157)
-    return kb
+        return 1.51 * (Da ** -0.157)
+    else:
+        return None
 
    
     
@@ -107,8 +108,12 @@ st.subheader('Calculated ka')
 st.write(calculated_param_df)
 
 #Calculate kb
-calculated_param = {'kb': "{:.2f}".format(kb)}
-calculated_param_df=pd.DataFrame(calculated_param, index=[0])
+# Calculate kb
+kb_value = kb(Da)  # Call the function using Da
+if kb_value is not None:
+    calculated_param = {'kb': "{:.2f}".format(kb_value)}
+else:
+    calculated_param = {'kb': "Invalid Da"}
 st.subheader('Calculated kb')
 st.write(calculated_param_df)
 
