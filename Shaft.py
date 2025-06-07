@@ -75,7 +75,7 @@ def calculate_kb(Da):
     else:
         return None
 
-   
+   kb = calculate_kb(Da)
     
 
 user_input={'Da (mm)': "{:.2f}".format(Da),
@@ -108,10 +108,13 @@ st.subheader('Calculated ka')
 st.write(calculated_param_df)
 
 #Calculate kb
-calculated_param={'kb': "{:.2f}".format(kb)}
-calculated_param_df=pd.DataFrame(calculated_param, index=[0])
-st.subheader('Calculated kb')
-st.write(calculated_param_df)
+if kb is not None:
+    calculated_param = {'kb': "{:.2f}".format(kb)}
+    calculated_param_df = pd.DataFrame(calculated_param, index=[0])
+    st.subheader('Calculated kb')
+    st.write(calculated_param_df)
+else:
+    st.error("Cannot calculate kb: Shaft diameter Da must be between 7.62 mm and 254 mm")
 
 # Corroded Pipe
 calculated_param={'P_ASME_B31G (MPa)': "{:.2f}".format(P_ASME_B31G)}
