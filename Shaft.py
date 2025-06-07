@@ -69,13 +69,13 @@ ka = a*(UTS**b)
 # Calculate kb
 def calculate_kb(Da):
     if 7.62 <= Da <= 51:
-        return 1.24 * (Da**-0.107)
+        return 1.24 * (Da ** -0.107)
     elif 51 < Da <= 254:
-        return 1.51 * (Da**-0.157)
+        return 1.51 * (Da ** -0.157)
     else:
         return None
 
-   kb = calculate_kb(Da)
+kb = calculate_kb(Da)
     
 
 user_input={'Da (mm)': "{:.2f}".format(Da),
