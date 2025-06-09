@@ -21,7 +21,8 @@ def user_input_features():
     shaft_diameter_A = st.sidebar.number_input('Shaft Diameter(A), D (mm)', value = 30)
     shaft_diameter_B = st.sidebar.number_input('Shaft Diameter(B), D (mm)', value = 0.01)
     shaft_length = st.sidebar.number_input('Shaft Length, L (mm)', value = 0.01)
-    Applied_Force = st.sidebar.number_input('Applied Force, F (N)', value = 0.01)
+    Applied_Force_A = st.sidebar.number_input('Applied Force(A), Fa (N)', value = 0.01)
+    Applied_Force_B = st.sidebar.number_input('Applied Force(B), Fb (N)', value = 0.01)
     Sy = st.sidebar.number_input('Yield Stress, Sy (MPa)', value = 0.01)
     UTS = st.sidebar.number_input('Ultimate Tensile Strength, UTS (MPa)', value = 0.01)
     Length_of_F_to_shaft_end = st.sidebar.number_input('Length of F to shaft end, Lf (mm)', value = 0.01)
@@ -32,8 +33,10 @@ def user_input_features():
     data = {'Da (mm)': shaft_diameter_A,
             'Db (mm)': shaft_diameter_B,
             'L (mm)': shaft_length,   
-            'F (N)': Applied_Force,
-            'Lf (mm)': Length_of_F_to_shaft_end,
+            'Fa (N)': Applied_Force_at_Point_A,
+            'Fb (N)': Applied_Force_at_Point_B,
+            'Lfa (mm)': Length_from_Fa_to_shaft_end,
+            'Lfb (mm)': Length_from_Fb_to_shaft_end,
             'UTS (MPa)': UTS,
             'Sy (MPa)': Sy,
             'a': Constant_a_for_ka,
@@ -48,7 +51,8 @@ df = user_input_features()
 Da=df['Da (mm)'].values.item()
 Db=df['Db (mm)'].values.item()
 L=df['L (mm)'].values.item()
-F=df['F (N)'].values.item()
+Fa=df['Fa (N)'].values.item()
+Fb=df['Fb (N)'].values.item()
 UTS=df['UTS (MPa)'].values.item()
 Sy=df['Sy (MPa)'].values.item()
 Lf=df['Lf (mm)'].values.item()
@@ -86,7 +90,8 @@ user_input={'Da (mm)': "{:.2f}".format(Da),
             'Db (mm)': "{:.2f}".format(Db),
             'L (mm)': "{:.2f}".format(L),
             'Lf (mm)': "{:.2f}".format(Lf),
-            'F (N)': "{:.2f}".format(F),
+            'Fa (N)': "{:.2f}".format(F),
+            'Fb (N)': "{:.2f}".format(F),
             'UTS (MPa)': "{:.2f}".format(UTS),
             'Sy (MPa)': "{:.2f}".format(Sy),
             'a': "{:.2f}".format(a),
