@@ -86,6 +86,15 @@ kb = calculate_kb(Da)
 #Calculate Se
 
 Se = (ka*kb)*Se_prime
+
+#Calculate Neuber Constant(Bending/axial)
+def calculate_NC(UTS):
+    if 340 <= UTS <= 1700:
+        return 0.958 - 1.83 (10 ** -3) * UTS + 1.43 (10 ** -6) * (UTS ** 2) - 2.67 (10 ** -8) * (UTS ** 3)
+    else:
+        return None
+
+NC = calculate_NC(UTS)
     
 
 user_input={'Da (mm)': "{:.2f}".format(Da),
@@ -97,6 +106,7 @@ user_input={'Da (mm)': "{:.2f}".format(Da),
             'Fb (N)': "{:.2f}".format(Fb),
             'UTS (MPa)': "{:.2f}".format(UTS),
             'Sy (MPa)': "{:.2f}".format(Sy),
+            'NC (math.sqrt(mm))': "{:.2f}".format(NC),
             'a': "{:.2f}".format(a),
             'b': "{:.2f}".format(b),
             'r(mm)': "{:.2f}".format(r)}
@@ -133,6 +143,15 @@ calculated_param={' Se (MPa)': "{:.2f}".format(Se)}
 calculated_param_df=pd.DataFrame(calculated_param, index=[0])
 st.subheader('Calculated Se ')
 st.write(calculated_param_df)
+
+#Calculate Neuber Constant(Bending/axial)
+if NC is not None:
+    calculated_param = {'NC (math.sqrt(mm))': "{:.2f}".format(NC),}
+    calculated_param_df = pd.DataFrame(calculated_param, index=[0])
+    st.subheader('Calculated NC')
+    st.write(calculated_param_df)
+else:
+    st.error("Cannot calculate NC: UTS must be between 340 Mpa and 1700 Mpa")
 
 calculated_param={'P_DnV (MPa)': "{:.2f}".format(P_DnV)}
 calculated_param_df=pd.DataFrame(calculated_param, index=[0])
