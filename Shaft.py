@@ -13,7 +13,6 @@ st.header("Advanced Shaft Fatigue Evaluation Shafi")
 
 st.subheader('Dimensional Parameters')
 
-# Corrected URL (direct link format for Google Drive)
 image_url = "https://homework.study.com/cimages/multimages/16/060519-118885225862519178792.jpg"
 st.image(image_url, caption="Fig. 1: Schematic Drawing of Shaft with Dimensions")
 
