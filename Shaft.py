@@ -25,7 +25,8 @@ def user_input_features():
     Applied_Force_at_Point_B = st.sidebar.number_input('Applied Force(B), Fb (N)', value = 0.01)
     Sy = st.sidebar.number_input('Yield Stress, Sy (MPa)', value = 0.01)
     UTS = st.sidebar.number_input('Ultimate Tensile Strength, UTS (MPa)', value = 0.01)
-    Length_of_F_to_shaft_end = st.sidebar.number_input('Length of F to shaft end, Lf (mm)', value = 0.01)
+    Length_from_Fa_to_shaft_end = st.sidebar.number_input('Length from Fa to shaft end, Lf (mm)', value = 0.01)
+    Length_from_Fb_to_shaft_end = st.sidebar.number_input('Length from Fb to shaft end, Lf (mm)', value = 0.01)
     Constant_a_for_ka = st.sidebar.number_input('Constant a for ka, a', value = 0.00)
     Constant_b_for_ka = st.sidebar.number_input('Constant b for ka, b', value = 0.00)
     Notch_radius = st.sidebar.number_input('Notch radius,r(mm)', value = 0.01)
@@ -89,7 +90,8 @@ Se = (ka*kb)*Se_prime
 user_input={'Da (mm)': "{:.2f}".format(Da),
             'Db (mm)': "{:.2f}".format(Db),
             'L (mm)': "{:.2f}".format(L),
-            'Lf (mm)': "{:.2f}".format(Lf),
+            'Lfa (mm)': "{:.2f}".format(Lf),
+            'Lfb (mm)': "{:.2f}".format(Lf),
             'Fa (N)': "{:.2f}".format(F),
             'Fb (N)': "{:.2f}".format(F),
             'UTS (MPa)': "{:.2f}".format(UTS),
