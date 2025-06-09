@@ -97,19 +97,39 @@ def calculate_NC(UTS):
 NC = calculate_NC(UTS)
     
 
-user_input={'Da (mm)': "{:.2f}".format(Da),
-            'Db (mm)': "{:.2f}".format(Db),
-            'L (mm)': "{:.2f}".format(L),
-            'Lfa (mm)': "{:.2f}".format(Lfa),
-            'Lfb (mm)': "{:.2f}".format(Lfb),
-            'Fa (N)': "{:.2f}".format(Fa),
-            'Fb (N)': "{:.2f}".format(Fb),
-            'UTS (MPa)': "{:.2f}".format(UTS),
-            'Sy (MPa)': "{:.2f}".format(Sy),
-            'NC (math.sqrt(mm))': "{:.2f}".format(NC),
-            'a': "{:.2f}".format(a),
-            'b': "{:.2f}".format(b),
-            'r(mm)': "{:.2f}".format(r)}
+if NC is not None:
+    user_input = {
+        'Da (mm)': "{:.2f}".format(Da),
+        'Db (mm)': "{:.2f}".format(Db),
+        'L (mm)': "{:.2f}".format(L),
+        'Lfa (mm)': "{:.2f}".format(Lfa),
+        'Lfb (mm)': "{:.2f}".format(Lfb),
+        'Fa (N)': "{:.2f}".format(Fa),
+        'Fb (N)': "{:.2f}".format(Fb),
+        'UTS (MPa)': "{:.2f}".format(UTS),
+        'Sy (MPa)': "{:.2f}".format(Sy),
+        'NC (math.sqrt(mm))': "{:.2f}".format(NC),  # only when NC is valid
+        'a': "{:.2f}".format(a),
+        'b': "{:.2f}".format(b),
+        'r(mm)': "{:.2f}".format(r)
+    }
+else:
+    st.error("Cannot calculate NC: UTS must be between 340 MPa and 1700 MPa")
+    user_input = {
+        'Da (mm)': "{:.2f}".format(Da),
+        'Db (mm)': "{:.2f}".format(Db),
+        'L (mm)': "{:.2f}".format(L),
+        'Lfa (mm)': "{:.2f}".format(Lfa),
+        'Lfb (mm)': "{:.2f}".format(Lfb),
+        'Fa (N)': "{:.2f}".format(Fa),
+        'Fb (N)': "{:.2f}".format(Fb),
+        'UTS (MPa)': "{:.2f}".format(UTS),
+        'Sy (MPa)': "{:.2f}".format(Sy),
+        'a': "{:.2f}".format(a),
+        'b': "{:.2f}".format(b),
+        'r(mm)': "{:.2f}".format(r)
+    }
+
             
 user_input_df=pd.DataFrame(user_input, index=[0])
 st.subheader('User Input Parameters')
