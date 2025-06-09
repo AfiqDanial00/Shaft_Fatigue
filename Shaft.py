@@ -90,7 +90,7 @@ Se = (ka*kb)*Se_prime
 #Calculate Neuber Constant(Bending/axial)
 def calculate_NC(UTS):
     if 340 <= UTS <= 1700:
-        return 0.958 - 1.83 (10 ** -3) * UTS + 1.43 (10 ** -6) * (UTS ** 2) - 2.67 (10 ** -8) * (UTS ** 3)
+        return 0.958 - 1.83 * (10 ** -3) * UTS + 1.43 * (10 ** -6) * (UTS ** 2) - 2.67 * (10 ** -8) * (UTS ** 3)
     else:
         return None
 
