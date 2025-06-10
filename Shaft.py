@@ -112,7 +112,7 @@ if NC is not None:
         'Fb (N)': "{:.2f}".format(Fb),
         'UTS (MPa)': "{:.2f}".format(UTS),
         'Sy (MPa)': "{:.2f}".format(Sy),
-        'NC (math.sqrt(mm))': "{:.2f}".format(NC),  # only when NC is valid
+        'NC (√(mm))': "{:.2f}".format(NC),  # only when NC is valid
         'a': "{:.2f}".format(a),
         'b': "{:.2f}".format(b),
         'r(mm)': "{:.2f}".format(r)
@@ -170,9 +170,9 @@ st.write(calculated_param_df)
 
 #Calculate Neuber Constant(Bending/axial)
 if NC is not None:
-    calculated_param = {'NC (math.sqrt(mm))': "{:.2f}".format(NC),}
+    calculated_param = {'NC(√(mm))': "{:.2f}".format(NC),}
     calculated_param_df = pd.DataFrame(calculated_param, index=[0])
-    st.subheader('Calculated NC')
+    st.subheader('Calculated Neuber Constant')
     st.write(calculated_param_df)
 else:
     st.error("Cannot calculate NC: UTS must be between 340 Mpa and 1700 Mpa")
