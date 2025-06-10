@@ -47,7 +47,7 @@ def user_input_features():
             'Sy (MPa)': Sy,
             'a': Constant_a_for_ka,
             'b': Constant_b_for_ka,
-            'r(mm),(Refer Figure)': Notch_radius,}   
+            'r(mm)': Notch_radius,}   
            
     features = pd.DataFrame(data, index=[0])
     return features
