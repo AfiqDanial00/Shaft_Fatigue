@@ -94,6 +94,7 @@ def calculate_NC(UTS):
     else:
         return None
     
+NC = calculate_NC(UTS)
 
 if NC is not None:
     user_input = {
