@@ -47,7 +47,7 @@ def user_input_features():
             'Sy (MPa)': Sy,
             'a': Constant_a_for_ka,
             'b': Constant_b_for_ka,
-            'r(mm)': Notch_radius, "Refer to Figure 2"}   
+            'r(mm),(Refer Figure)': Notch_radius,}   
            
     features = pd.DataFrame(data, index=[0])
     return features
@@ -65,7 +65,7 @@ Lfa=df['Lfa (mm)'].values.item()
 Lfb=df['Lfb (mm)'].values.item()
 a=df['a'].values.item()
 b=df['b'].values.item()
-r=df['r(mm)'].values.item()
+r=df['r(mm),(Refer Figure)'].values.item()
 
 
 st.subheader('Nomenclature')
