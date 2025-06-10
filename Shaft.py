@@ -14,9 +14,14 @@ st.header("Advanced Shaft Fatigue Evaluation Shafi")
 st.subheader('Dimensional Parameters')
 
 image_url = "https://homework.study.com/cimages/multimages/16/060519-118885225862519178792.jpg"
-st.image(image_url, caption="Fig. 1: Schematic Drawing of Shaft with Dimensions")
+
+# Create 3 columns and put the image in the middle column
+col1, col2, col3 = st.columns([1, 2, 1])  # Adjust ratios as needed
+with col2:
+    st.image(image_url, caption="Fig. 1: Schematic Drawing of Shaft with Dimensions")
 
 st.sidebar.header('User Input Parameters')
+
 def user_input_features():
     shaft_diameter_A = st.sidebar.number_input('Shaft Diameter(A), D (mm)', value = 30)
     shaft_diameter_B = st.sidebar.number_input('Shaft Diameter(B), D (mm)', value = 0.01)
