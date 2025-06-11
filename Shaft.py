@@ -65,7 +65,7 @@ Lfa=df['Lfa (mm)'].values.item()
 Lfb=df['Lfb (mm)'].values.item()
 a=df['a'].values.item()
 b=df['b'].values.item()
-r=df['r(mm),(Refer Figure)'].values.item()
+r=df['r(mm)'].values.item()
 
 
 st.subheader('Nomenclature')
