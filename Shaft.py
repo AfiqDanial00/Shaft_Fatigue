@@ -29,12 +29,20 @@ with col2:
     st.caption("Note: To find the value for notch radius, r(mm), please refer to this figure. "
                "(The value of notch sensitivity, q, is required)")
 
+image_url = "https://www.engineersedge.com/materials/images/stress-concentration-2.png"
+
+# Create 3 columns and put the image in the middle column
+col1, col2, col3 = st.columns([1, 2, 1])  # Adjust ratios as needed
+with col2:
+    st.image(image_url, caption="Fig. 3: Stress-concentration factor,Kt vs r/d")
+    st.caption("Note: Please refer this figure to obtained the value of Kt "
+               "(Kt is required to find Kf)")
 
 st.sidebar.header('User Input Parameters')
 
 def user_input_features():
-    shaft_diameter_A = st.sidebar.number_input('Shaft Diameter(A), D (mm)', value = 30)
-    shaft_diameter_B = st.sidebar.number_input('Shaft Diameter(B), D (mm)', value = 0.01)
+    shaft_diameter_A_(Big)= st.sidebar.number_input('Shaft Diameter(A), D (mm)', value = 30)
+    shaft_diameter_B_(Small) = st.sidebar.number_input('Shaft Diameter(B), D (mm)', value = 0.01)
     shaft_length = st.sidebar.number_input('Shaft Length, L (mm)', value = 0.01)
     Applied_Force_at_Point_A = st.sidebar.number_input('Applied Force(A), Fa (N)', value = 0.01)
     Applied_Force_at_Point_B = st.sidebar.number_input('Applied Force(B), Fb (N)', value = 0.01)
@@ -46,8 +54,8 @@ def user_input_features():
     Constant_b_for_ka = st.sidebar.number_input('Constant b for ka, b', value = 0.00)
     Notch_radius = st.sidebar.number_input('Notch radius,r(mm)', value = 0.01)
 
-    data = {'Da (mm)': shaft_diameter_A,
-            'Db (mm)': shaft_diameter_B,
+    data = {'Da (mm)': shaft_diameter_A_(Big),
+            'Db (mm)': shaft_diameter_B_(Small),
             'L (mm)': shaft_length,   
             'Fa (N)': Applied_Force_at_Point_A,
             'Fb (N)': Applied_Force_at_Point_B,
@@ -80,8 +88,8 @@ r=df['r(mm)'].values.item()
 
 st.subheader('Nomenclature')
 st.markdown("""
-- **Da**: Shaft diameter A
-- **Db**: Shaft diameter B
+- **Da**: Shaft diameter A (Big)
+- **Db**: Shaft diameter B (Small)
 - **L**: Shaft length
 - **F**: Applied force on the shaft
 - **Sy**: Shaft material yield stress
