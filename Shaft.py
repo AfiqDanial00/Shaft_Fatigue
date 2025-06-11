@@ -20,6 +20,15 @@ col1, col2, col3 = st.columns([1, 2, 1])  # Adjust ratios as needed
 with col2:
     st.image(image_url, caption="Fig. 1: Schematic Drawing of Shaft with Dimensions")
 
+image_url = "https://www.researchgate.net/publication/44220429/figure/download/fig1/AS:670016391356455@1536755764941/Notch-sensitivity-versus-notch-radius-for-steels-and-aluminium-alloys.png"
+
+# Create 3 columns and put the image in the middle column
+col1, col2, col3 = st.columns([1, 2, 1])  # Adjust ratios as needed
+with col2:
+    st.image(image_url, caption="Fig. 2: Notch sensitivity versus notch radius for steels and aluminium alloys.")
+    st.image(image_url, caption="-To find the value for notch radius,r(mm) please refer this figure.(The value of notch sensitivity,q is required) ")
+
+
 st.sidebar.header('User Input Parameters')
 
 def user_input_features():
