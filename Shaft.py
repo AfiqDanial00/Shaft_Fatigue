@@ -69,7 +69,17 @@ r=df['r(mm)'].values.item()
 
 
 st.subheader('Nomenclature')
-st.write(' Da is the shaft diameter A; Db is the shaft diameter B; L is the shaft length (i.e., by default = 1000 mm); F is the applied force on the shaft; Sy is the shaft material yield stress; UTS is the shaft material Ultimate Tensile Strength.')
+st.markdown("""
+- **Da**: Shaft diameter A
+- **Db**: Shaft diameter B
+- **L**: Shaft length (default = 1000 mm)
+- **F**: Applied force on the shaft
+- **Sy**: Shaft material yield stress
+- **UTS**: Shaft material Ultimate Tensile Strength
+- **Lf**: Length from force application point to shaft end
+- **a, b**: Constants for ka calculation
+- **r**: Notch radius
+""")
 
 # Calculate Se'
 Se_prime = 0.5*UTS
