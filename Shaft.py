@@ -72,11 +72,12 @@ st.subheader('Nomenclature')
 st.markdown("""
 - **Da**: Shaft diameter A
 - **Db**: Shaft diameter B
-- **L**: Shaft length (default = 1000 mm)
+- **L**: Shaft length
 - **F**: Applied force on the shaft
 - **Sy**: Shaft material yield stress
 - **UTS**: Shaft material Ultimate Tensile Strength
-- **Lf**: Length from force application point to shaft end
+- **Lfa**: Length from force application point A to shaft end
+- **Lfb**: Length from force application at point B to shaft end
 - **a, b**: Constants for ka calculation
 - **r**: Notch radius
 """)
