@@ -134,6 +134,12 @@ def calculate_NC(UTS):
     
 NC = calculate_NC(UTS)
 
+# Calculate Fatigue Stress Concentration Factor
+if NC is not None and r > 0:
+    Kf = 1 + (Kt - 1) / (1 + NC / math.sqrt(r))
+else:
+    Kf = None
+
 if NC is not None:
     user_input = {
         'Da (mm)': "{:.2f}".format(Da),
@@ -149,6 +155,7 @@ if NC is not None:
         'a': "{:.2f}".format(a),
         'b': "{:.2f}".format(b),
         'r(mm)': "{:.2f}".format(r)
+        'Kf (Fatigue)': "{:.2f}".format(Kf) if Kf is not None else "N/A",
     }
 else:
     st.error("Cannot calculate NC: UTS must be between 340 MPa and 1700 MPa")
@@ -165,6 +172,7 @@ else:
         'a': "{:.2f}".format(a),
         'b': "{:.2f}".format(b),
         'r(mm)': "{:.2f}".format(r)
+        'Kf (Fatigue)': "{:.2f}".format(Kf) if Kf is not None else "N/A",
     }
 
             
