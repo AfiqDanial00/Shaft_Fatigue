@@ -154,7 +154,7 @@ if NC is not None:
         'NC (√(mm))': "{:.2f}".format(NC),  # only when NC is valid
         'a': "{:.2f}".format(a),
         'b': "{:.2f}".format(b),
-        'r(mm)':"{:.2f}".format(r)
+        'r(mm)': "{:.2f}".format(r),
         'Kf (Fatigue)': "{:.2f}".format(Kf) if Kf is not None else "N/A",
     }
 else:
