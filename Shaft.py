@@ -53,6 +53,7 @@ def user_input_features():
     Constant_a_for_ka = st.sidebar.number_input('Constant a for ka, a', value = 0.00)
     Constant_b_for_ka = st.sidebar.number_input('Constant b for ka, b', value = 0.00)
     Notch_radius = st.sidebar.number_input('Notch radius,r(mm)', value = 0.01)
+    Kt = st.sidebar.number_input('Stress concentration factor,Kt', value = 0.01)
 
     data = {'Da (mm)': shaft_diameter_A,
             'Db (mm)': shaft_diameter_B,
@@ -65,7 +66,8 @@ def user_input_features():
             'Sy (MPa)': Sy,
             'a': Constant_a_for_ka,
             'b': Constant_b_for_ka,
-            'r(mm)': Notch_radius,}   
+            'r(mm)': Notch_radius,
+            'Kt': Stress_concentration_factor,}
            
     features = pd.DataFrame(data, index=[0])
     return features
@@ -84,6 +86,7 @@ Lfb=df['Lfb (mm)'].values.item()
 a=df['a'].values.item()
 b=df['b'].values.item()
 r=df['r(mm)'].values.item()
+Kt=df['Kt'].values.item()
 
 
 st.subheader('Nomenclature')
@@ -98,6 +101,7 @@ st.markdown("""
 - **Lfb**: Length from force application at point B to shaft end
 - **a, b**: Constants for ka calculation
 - **r**: Notch radius
+- **Kt**: Stress concentration factor
 """)
 
 # Calculate Se'
