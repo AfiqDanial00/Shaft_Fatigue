@@ -41,7 +41,7 @@ with col2:
 st.sidebar.header('User Input Parameters')
 
 def user_input_features():
-    shaft_diameter_A_(Big)= st.sidebar.number_input('Shaft Diameter(A), D (mm)', value = 30)
+    shaft_diameter_A_(Big) = st.sidebar.number_input('Shaft Diameter(A), D (mm)', value = 30)
     shaft_diameter_B_(Small) = st.sidebar.number_input('Shaft Diameter(B), D (mm)', value = 0.01)
     shaft_length = st.sidebar.number_input('Shaft Length, L (mm)', value = 0.01)
     Applied_Force_at_Point_A = st.sidebar.number_input('Applied Force(A), Fa (N)', value = 0.01)
