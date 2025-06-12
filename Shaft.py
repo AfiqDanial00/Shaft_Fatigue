@@ -41,8 +41,8 @@ with col2:
 st.sidebar.header('User Input Parameters')
 
 def user_input_features():
-    shaft_diameter_A_(Big) = st.sidebar.number_input('Shaft Diameter(A), D (mm)', value = 30)
-    shaft_diameter_B_(Small) = st.sidebar.number_input('Shaft Diameter(B), D (mm)', value = 0.01)
+    shaft_diameter_A = st.sidebar.number_input('Shaft Diameter(A), D (mm)', value = 30)
+    shaft_diameter_B = st.sidebar.number_input('Shaft Diameter(B), D (mm)', value = 0.01)
     shaft_length = st.sidebar.number_input('Shaft Length, L (mm)', value = 0.01)
     Applied_Force_at_Point_A = st.sidebar.number_input('Applied Force(A), Fa (N)', value = 0.01)
     Applied_Force_at_Point_B = st.sidebar.number_input('Applied Force(B), Fb (N)', value = 0.01)
@@ -54,8 +54,8 @@ def user_input_features():
     Constant_b_for_ka = st.sidebar.number_input('Constant b for ka, b', value = 0.00)
     Notch_radius = st.sidebar.number_input('Notch radius,r(mm)', value = 0.01)
 
-    data = {'Da (mm)': shaft_diameter_A_(Big),
-            'Db (mm)': shaft_diameter_B_(Small),
+    data = {'Da (mm)': shaft_diameter_A,
+            'Db (mm)': shaft_diameter_B,
             'L (mm)': shaft_length,   
             'Fa (N)': Applied_Force_at_Point_A,
             'Fb (N)': Applied_Force_at_Point_B,
