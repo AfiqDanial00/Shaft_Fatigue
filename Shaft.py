@@ -171,7 +171,7 @@ else:
         'Sy (MPa)': "{:.2f}".format(Sy),
         'a': "{:.2f}".format(a),
         'b': "{:.2f}".format(b),
-        'r(mm)': "{:.2f}".format(r)
+        'r(mm)': "{:.2f}".format(r),
         'Kf (Fatigue)': "{:.2f}".format(Kf) if Kf is not None else "N/A",
     }
 
@@ -255,3 +255,4 @@ st.markdown('[Case Study](https://drive.google.com/file/d/1Ako5uVRPYL5k5JeEQ_Xhl
 st.markdown('[Corroded Pipe Burst Data](https://docs.google.com/spreadsheets/d/1YJ7ziuc_IhU7-MMZOnRmh4h21_gf6h5Z/edit?gid=56754844#gid=56754844)', unsafe_allow_html=True)
 st.markdown('[Pre-Test](https://forms.gle/wPvcgnZAC57MkCxN8)', unsafe_allow_html=True)
 st.markdown('[Post-Test](https://forms.gle/FdiKqpMLzw9ENscA9)', unsafe_allow_html=True)
+
